@@ -201,9 +201,9 @@ export default function Report() {
             <div className="glass-panel" style={{ padding: '2rem', textAlign: 'center' }}>
               <div style={{ position: 'relative', display: 'inline-block', marginBottom: '1.5rem' }}>
                 <img
-                  src={profile.avatar_url}
+                  src={profile.avatar_url?.includes('?') ? `${profile.avatar_url}&s=400` : `${profile.avatar_url}?s=400`}
                   alt={profile.name || username}
-                  style={{ width: 120, height: 120, borderRadius: '50%', border: '3px solid rgba(99,102,241,0.5)', objectFit: 'cover', boxShadow: '0 0 30px rgba(99,102,241,0.3)' }}
+                  style={{ width: 120, height: 120, borderRadius: '50%', border: '3px solid rgba(99,102,241,0.5)', objectFit: 'cover', boxShadow: '0 0 30px rgba(99,102,241,0.3)', imageRendering: 'crisp-edges' }}
                 />
                 <div style={{
                   position: 'absolute', bottom: -10, left: '50%', transform: 'translateX(-50%)',
